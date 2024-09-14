@@ -12,3 +12,9 @@
     background-color: transparent;
     border: none;
 }
+
+/* hero-section */
+
+.hero-section {
+    padding-inline-start: 0 !important;
+}

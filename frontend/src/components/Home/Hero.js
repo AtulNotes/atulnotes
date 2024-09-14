@@ -2,7 +2,7 @@ import React from 'react'
 
 const Hero = () => {
     return (
-        <div className="main-frame astro-vrdttmbt">
+        <div className="main-frame astro-vrdttmbt hero-section">
             <div className="lg:sl-flex astro-67yu43on">
                 <div className="main-pane astro-67yu43on">
                     <main data-pagefind-body lang="en" dir="ltr" className="astro-bguv2lll">

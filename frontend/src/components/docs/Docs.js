@@ -85,7 +85,7 @@ const Docs = () => {
                 </button>
                 <div className="main-frame astro-vrdttmbt">
                     <div className="lg:sl-flex astro-67yu43on">
-                        <Aside />
+                        <Aside htmlContent={content} />
                         <div className="main-pane astro-67yu43on">
                             <main data-pagefind-body lang="en" dir="ltr" className="astro-bguv2lll">
                                 <div className="content-panel astro-7nkwcw3z">

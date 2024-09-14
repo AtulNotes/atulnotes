@@ -2140,7 +2140,8 @@ a:where(.astro-7q3lir66):focus {
     .right-sidebar-container:where(.astro-67yu43on) {
         order: 2;
         position: relative;
-        width: calc(var(--sl-sidebar-width) + (100% - var(--sl-content-width) - var(--sl-sidebar-width)) / 2);
+        /* width: calc(var(--sl-sidebar-width) + (100% - var(--sl-content-width) - var(--sl-sidebar-width)) / 2); */
+        width: 28vw;
     }
 
     .right-sidebar:where(.astro-67yu43on) {
@@ -2256,9 +2257,9 @@ html:not([data-has-toc]) {
     --sl-mobile-toc-height: 0rem;
 }
 
-/* html:not([data-has-sidebar]) {
+html:not([data-has-sidebar]) {
     --sl-content-width: 67.5rem;
-} */
+}
 
 html {
     scroll-padding-top: calc(1.5rem + var(--sl-nav-height) + var(--sl-mobile-toc-height));

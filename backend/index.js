@@ -17,17 +17,6 @@ app.get('/slider', (req, res) => {
   res.send(fileContent)
 })
 
-app.get('/aside/:page', (req, res) => {
-  const page = req.params.page;
-  const filepath = `json/aside/${page}.json`;
-  try {
-    const fileContent = fs.readFileSync(filepath, "utf-8");
-    res.send(fileContent);
-  } catch (err) {
-    res.status(404).send('File not found');
-  }
-});
-
 app.get('/data/:page', async (req, res) => {
   const page = req.params.page;
   const filepath = `data/${page}.md`;
