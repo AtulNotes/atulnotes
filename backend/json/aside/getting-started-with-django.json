@@ -3,12 +3,16 @@
         "title": "Getting Started with Django",
         "content": [
             {
-                "id": "#_what-is-django?",
+                "id": "#what-is-django",
                 "title": "What is Django?"
             },
             {
-                "id": "#_environment-setup",
+                "id": "#environment-setup",
                 "title": "Environment Setup"
+            },
+            {
+                "id": "#django-project",
+                "title": "Django Project"
             }
         ]
     }

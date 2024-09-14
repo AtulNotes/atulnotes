@@ -14,6 +14,35 @@ To get started with Django, you’ll need to install it on your computer. You ca
 
 #### Install virtualenv
 
-```
+``` showLineNumbers
 pip install virtualenv
+```
+
+#### Initial virtualenv And Activate
+
+```
+virtualenv .venv
+
+cd .venv\Scripts\
+
+ .\activate
+```
+
+Now for all installations, you can use uv pip install command. For example, to install Django, run the following command:
+
+```
+pip install django
+
+pip install -r requirements.txt
+```
+
+## Django Project
+
+A Django project is a collection of settings and configurations that define the structure and behavior of a web application. It includes the code for the application, as well as the templates, static files, and other resources that make up the application.
+
+To create a new Django project, you can use the following command:
+
+```
+django-admin startproject [ProjectName]
+cd [ProjectName]
 ```

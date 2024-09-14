@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import Slide from './Slide';
 import Aside from './Aside';
+import rehypeDocument from 'rehype-document';
 import rehypeFormat from 'rehype-format';
 import rehypeStringify from 'rehype-stringify';
-import remarkParse from 'remark-parse';
-import remarkRehype from 'remark-rehype';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypePrettyCode from 'rehype-pretty-code';
+import remarkRehype from 'remark-rehype';
+import remarkParse from 'remark-parse';
 import { unified } from 'unified';
+import { transformerCopyButton } from '@rehype-pretty/transformers'
 
 const Docs = () => {
     const [title, setTitle] = useState('');
@@ -30,16 +32,31 @@ const Docs = () => {
             const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/data/${page}`, options);
             const textData = await response.json();
             const { content, data } = textData;
+            // const rehypeFormat = transformerCopyButton({
+            //     copyButton: true,
+            //     copyButtonLabel: 'Copy',
+            //     copyButtonLabelCopied: 'Copied',
+            // });
+            
+
             const processor = unified()
                 .use(remarkParse)
                 .use(remarkRehype)
+                .use(rehypeDocument, { title: '👋🌍' })
                 .use(rehypeFormat)
                 .use(rehypeStringify)
                 .use(rehypeSlug)
                 .use(rehypeAutolinkHeadings)
                 .use(rehypePrettyCode, {
-                    theme: "github-dark"
-                });
+                    theme: "github-dark",
+                    transformers: [
+                        transformerCopyButton({
+                            visibility: 'always',
+                            feedbackDuration: 3_000,
+                        }),
+                    ],
+
+                })
 
             const htmlContent = (await processor.process(content)).toString();
             setTitle(data.title);
@@ -81,7 +98,7 @@ const Docs = () => {
                             <main data-pagefind-body lang="en" dir="ltr" className="astro-bguv2lll">
                                 <div className="content-panel astro-7nkwcw3z">
                                     <div className="sl-container astro-7nkwcw3z">
-                                        <h1 id="#_top" className="astro-j6tvhyss">{title}</h1>
+                                        <h1 id="_top" className="astro-j6tvhyss">{title}</h1>
                                     </div>
                                 </div>
                                 <div>
