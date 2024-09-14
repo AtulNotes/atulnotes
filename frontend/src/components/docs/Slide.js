@@ -79,7 +79,7 @@ const Slide = () => {
                                                                 aria-current={pagePara === slug.slug ? 'page' : ''}
                                                                 className="astro-3ii7xxms">
                                                                 <span className="astro-3ii7xxms"
-                                                                >{slug.slug}</span>
+                                                                >{slug.Title}</span>
                                                             </a>
                                                         </li>
                                                     )

@@ -3,7 +3,12 @@
         "Title": "Django",
         "slugs": [
             {
+                "Title": "Getting Started with Django",
                 "slug": "getting-started-with-django"
+            },
+            {
+                "Title": "Jinja Templates App in Django",
+                "slug": "jinja-templates-app-in-django"
             }
         ]
     }
