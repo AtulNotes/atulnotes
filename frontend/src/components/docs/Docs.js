@@ -11,14 +11,20 @@ const Docs = () => {
         const params = new URLSearchParams(search);
         const page = params.get('page');
         // setPagePara(page);
+        const options = {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/text',
+                'Access-Control-Allow-Origin': '*',
+            }
+        };
 
         try {
-            // const response = await fetch(`../../json/data/${page}.json`);
-            const response = "";
-            const data = await response.json();
-            setData(data);
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/data/${page}`, options);
+            const textData = await response.text();
+            setData(textData);
         } catch (error) {
-            console.error('Error:', error);
+            console.error('Error: Fetching data Failed');
         }
     }
     useEffect(() => {
