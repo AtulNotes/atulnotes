@@ -11,7 +11,6 @@ const themeSlice = createSlice({
     },
     reducers: {
         toggletheme: (state, action) => {
-            console.log(action.payload);
             
             state.currentTheme = action.payload;
             if (typeof localStorage !== 'undefined') {

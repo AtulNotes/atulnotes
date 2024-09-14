@@ -1,5 +1,5 @@
 ---
-title: Home Title
+title: Welcome to Read the Docs
 ---
 
-# Home Page
+#etting Started(#getting-started)

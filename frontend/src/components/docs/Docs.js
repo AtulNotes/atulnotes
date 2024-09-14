@@ -1,32 +1,54 @@
 import React, { useState, useEffect } from 'react';
-import Slide from './Slide'
-import Aside from './Aside'
+import Slide from './Slide';
+import Aside from './Aside';
+import rehypeFormat from 'rehype-format';
+import rehypeStringify from 'rehype-stringify';
+import remarkParse from 'remark-parse';
+import remarkRehype from 'remark-rehype';
+import rehypeSlug from 'rehype-slug';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypePrettyCode from 'rehype-pretty-code';
+import { unified } from 'unified';
 
 const Docs = () => {
-    const [data, setData] = useState({});
-    // const [pagePara, setPagePara] = useState('');
+    const [title, setTitle] = useState('');
+    const [content, setContent] = useState('');
 
     const fetchData = async () => {
         const search = window.location.search;
         const params = new URLSearchParams(search);
         const page = params.get('page');
-        // setPagePara(page);
         const options = {
             method: 'GET',
             headers: {
-                'Content-Type': 'application/text',
+                'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': '*',
             }
         };
 
         try {
             const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/data/${page}`, options);
-            const textData = await response.text();
-            setData(textData);
+            const textData = await response.json();
+            const { content, data } = textData;
+            const processor = unified()
+                .use(remarkParse)
+                .use(remarkRehype)
+                .use(rehypeFormat)
+                .use(rehypeStringify)
+                .use(rehypeSlug)
+                .use(rehypeAutolinkHeadings)
+                .use(rehypePrettyCode, {
+                    theme: "github-dark"
+                });
+
+            const htmlContent = (await processor.process(content)).toString();
+            setTitle(data.title);
+            setContent(htmlContent);
         } catch (error) {
             console.error('Error: Fetching data Failed');
         }
-    }
+    };
+
     useEffect(() => {
         fetchData();
     }, []);
@@ -57,38 +79,17 @@ const Docs = () => {
                         <Aside />
                         <div className="main-pane astro-67yu43on">
                             <main data-pagefind-body lang="en" dir="ltr" className="astro-bguv2lll">
-
-                                <div >
-                                    {/* {
-                                        data && data.length > 0 && data.map((item, index) => {
-                                            return (
-                                                <div key={index} className="content-panel astro-7nkwcw3z">
-                                                    <div className="sl-container astro-7nkwcw3z">
-                                                        <h1 id={item.id} className="astro-j6tvhyss">{item.title}</h1>
-                                                    </div>
-                                                </div>
-                                            )
-                                        })
-                                    } */}
+                                <div className="content-panel astro-7nkwcw3z">
+                                    <div className="sl-container astro-7nkwcw3z">
+                                        <h1 id="#_top" className="astro-j6tvhyss">{title}</h1>
+                                    </div>
+                                </div>
+                                <div>
                                     <div className="content-panel astro-7nkwcw3z">
                                         <div className="sl-container astro-7nkwcw3z">
                                             <div className="sl-container astro-7nkwcw3z">
                                                 <div className="sl-markdown-content">
-                                                    {/* {
-                                                        data && data.length > 0 && data.map((item, index) => {
-                                                            let content = item.content;
-                                                            return (
-                                                                content && content.length > 0 && content.map((item, index) => {
-                                                                    return (
-                                                                        <div key={index}>
-                                                                            <h2 id={item.id}>{item.title}</h2>
-                                                                            <p className="sl-markdown-content " dangerouslySetInnerHTML={{ __html: item.content }} />
-                                                                        </div>
-                                                                    )
-                                                                })
-                                                            )
-                                                        })
-                                                    } */}
+                                                    <div dangerouslySetInnerHTML={{ __html: content }}></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -99,13 +100,9 @@ const Docs = () => {
                     </div>
                 </div>
                 <Slide />
-
-                {/*  */}
             </nav>
-
-            {/*  */}
         </>
-    )
-}
+    );
+};
 
-export default Docs
+export default Docs;

@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const matter = require('gray-matter');
+
 const app = express();
 app.use(cors());
 const fs = require('fs')
@@ -27,25 +28,21 @@ app.get('/aside/:page', (req, res) => {
   }
 });
 
-app.get('/data/:page', (req, res) => {
+app.get('/data/:page', async (req, res) => {
   const page = req.params.page;
   const filepath = `data/${page}.md`;
-  
+
   try {
     const fileContent = fs.readFileSync(filepath, "utf-8");
-    const {content, data} = matter(fileContent)
-  //  ================================================
-  // Add unified the data and content
-
-
-
-
-
-  
-  //  ================================================
-  res.send(fileContent);
+    const { content, data } = matter(fileContent)
+    res.send(
+      ({
+        data,
+        content
+      })
+    );
   } catch (err) {
-    res.status(404).send('File not found');
+    res.status(404).send(err);
   }
 });
 
