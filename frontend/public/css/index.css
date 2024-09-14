@@ -305,9 +305,6 @@ code {
 
 .content-panel:where(.astro-7nkwcw3z) {
     padding: 1.5rem var(--sl-content-pad-x);
-}
-
-.content-panel:where(.astro-7nkwcw3z)+.content-panel:where(.astro-7nkwcw3z) {
     border-top: 1px solid var(--sl-color-hairline);
 }
 
