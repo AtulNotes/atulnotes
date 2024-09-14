@@ -1,0 +1,15 @@
+[
+    {
+        "title": "Getting Started with Django",
+        "content": [
+            {
+                "id": "#_What-is-Django?",
+                "title": "What is Django?"
+            },
+            {
+                "id": "#_Environment-Setup",
+                "title": "Environment Setup"
+            }
+        ]
+    }
+]

@@ -1,0 +1,8 @@
+.d-none {
+    display: none;
+}
+
+/* Navbar */
+.search_close_icon {
+    cursor: pointer;
+}
