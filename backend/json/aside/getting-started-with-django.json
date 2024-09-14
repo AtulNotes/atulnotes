@@ -13,6 +13,14 @@
             {
                 "id": "#django-project",
                 "title": "Django Project"
+            },
+            {
+                "id": "#start-a-django-server",
+                "title": "Start a Django Server"
+            },
+            {
+                "id": "#creating-our-firstviews",
+                "title": "Creating our first views"
             }
         ]
     }

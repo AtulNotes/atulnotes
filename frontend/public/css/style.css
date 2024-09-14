@@ -6,3 +6,9 @@
 .search_close_icon {
     cursor: pointer;
 }
+
+/* copy Button */
+.rehype-pretty-copy{
+    background-color: transparent;
+    border: none;
+}

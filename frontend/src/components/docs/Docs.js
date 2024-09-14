@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Slide from './Slide';
 import Aside from './Aside';
-import rehypeDocument from 'rehype-document';
 import rehypeFormat from 'rehype-format';
 import rehypeStringify from 'rehype-stringify';
 import rehypeSlug from 'rehype-slug';
@@ -32,17 +31,11 @@ const Docs = () => {
             const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/data/${page}`, options);
             const textData = await response.json();
             const { content, data } = textData;
-            // const rehypeFormat = transformerCopyButton({
-            //     copyButton: true,
-            //     copyButtonLabel: 'Copy',
-            //     copyButtonLabelCopied: 'Copied',
-            // });
-            
+
 
             const processor = unified()
                 .use(remarkParse)
                 .use(remarkRehype)
-                .use(rehypeDocument, { title: '👋🌍' })
                 .use(rehypeFormat)
                 .use(rehypeStringify)
                 .use(rehypeSlug)
@@ -51,11 +44,10 @@ const Docs = () => {
                     theme: "github-dark",
                     transformers: [
                         transformerCopyButton({
-                            visibility: 'always',
+                            visibility: 'hover',
                             feedbackDuration: 3_000,
                         }),
                     ],
-
                 })
 
             const htmlContent = (await processor.process(content)).toString();
