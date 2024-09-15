@@ -75,7 +75,7 @@ const Slide = () => {
                                                     return (
                                                         <li key={index} className="astro-3ii7xxms">
                                                             <a
-                                                                href={`/docs?page=${slug.slug}`}
+                                                                href={`/docs?lang=${item.slug}&page=${slug.slug}`}
                                                                 aria-current={pagePara === slug.slug ? 'page' : ''}
                                                                 className="astro-3ii7xxms">
                                                                 <span className="astro-3ii7xxms"

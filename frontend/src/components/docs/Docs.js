@@ -19,6 +19,7 @@ const Docs = () => {
         const search = window.location.search;
         const params = new URLSearchParams(search);
         const page = params.get('page');
+        const lang = params.get('lang');
         const options = {
             method: 'GET',
             headers: {
@@ -28,7 +29,7 @@ const Docs = () => {
         };
 
         try {
-            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/data/${page}`, options);
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/data/${lang}/${page}`, options);
             const textData = await response.json();
             const { content, data } = textData;
 

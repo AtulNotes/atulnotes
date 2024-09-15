@@ -17,9 +17,10 @@ app.get('/slider', (req, res) => {
   res.send(fileContent)
 })
 
-app.get('/data/:page', async (req, res) => {
+app.get('/data/:lang/:page', async (req, res) => {
   const page = req.params.page;
-  const filepath = `data/${page}.md`;
+  const lang = req.params.lang;
+  const filepath = `data/${lang}/${page}.md`;
 
   try {
     const fileContent = fs.readFileSync(filepath, "utf-8");

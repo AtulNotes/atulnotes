@@ -1,6 +1,7 @@
 [
     {
         "Title": "Django",
+        "slug": "django",
         "slugs": [
             {
                 "Title": "Getting Started with Django",
