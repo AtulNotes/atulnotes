@@ -20,8 +20,13 @@ app.get('/slider', (req, res) => {
 app.get('/data/:lang/:page', async (req, res) => {
   const page = req.params.page;
   const lang = req.params.lang;
-  const filepath = `data/${lang}/${page}.md`;
-
+  if (page != 'home') {
+    filepath = `data/${lang}/${page}.md`;
+  } else {
+    filepath = `data/${page}.md`;
+  }
+  console.log(filepath);
+  
   try {
     const fileContent = fs.readFileSync(filepath, "utf-8");
     const { content, data } = matter(fileContent)

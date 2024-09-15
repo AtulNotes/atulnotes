@@ -10,6 +10,10 @@
             {
                 "Title": "Jinja Templates App in Django",
                 "slug": "jinja-templates-app-in-django"
+            },
+            {
+                "Title": "A Guide on Django Models",
+                "slug": "a-guide-on-django-models"
             }
         ]
     }
