@@ -14,6 +14,10 @@
             {
                 "Title": "A Guide on Django Models",
                 "slug": "a-guide-on-django-models"
+            },
+            {
+                "Title": "Deploy a Django App",
+                "slug": "deploy-a-django-app"
             }
         ]
     }

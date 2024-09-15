@@ -137,6 +137,19 @@ Now, let’s run the server again and visit the [http://localhost:8000/](http://
 Welcome to Django Project
 ```
 
+## Setup Template and static Folder
+
+Create a Template folder in Root Directory or Create a Template folder in Root Directory
+
+```py showLineNumbers
+# ProjectName/settings.py
+import os # at the top of settings.py
+'DIRS': ['templates'], # inside template section
+
+STATIC_URL = '/static/' # below this add the following line
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+```
+
 ## Adding CSS and JavaScript
 
 To add CSS and JavaScript to your Django project, you can create a new file called **static/css/style.css** in the **ProjectName directory**. In this file, you can write CSS code that will be used to style the HTML page. You can also create a new file called **static/js/script.js** in the **ProjectName directory**. In this file, you can write JavaScript code that will be used to add interactivity to the HTML page.
@@ -157,20 +170,7 @@ body {
 console.log("Hello, world!");
 ```
 
-To add this css file go to settings.py and add the following line:
-
-```py showLineNumbers
-# ProjectName/settings.py
-import os # at the top of settings.py
-'DIRS': ['templates'], # inside template section
-
-STATIC_URL = '/static/' # below this add the following line
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-```
-
 In the index.html file, add the following line:
-
-at the top of the file:
 
 ```html showLineNumbers
 <!-- templates/index.html File Path -->
