@@ -12,7 +12,7 @@ const Hero = () => {
                                     <div className="sl-flex stack astro-jbfsktt5">
                                         <div className="sl-flex copy astro-jbfsktt5">
                                             <h1 id="_top" data-page-title className="astro-jbfsktt5">
-                                                Welcome to Atul22gNotes Docs
+                                                Welcome to AtulNotes
                                             </h1>
                                             <div className="tagline astro-jbfsktt5">
                                                 Next-gen documentation that builds reading habits into
@@ -37,9 +37,8 @@ const Hero = () => {
                                             </a>
                                             <a
                                                 className="sl-flex action secondary astro-yjy4zhro"
-                                                target="_atul"
-                                                href="https://atul22g.netlify.app/">
-                                                Projects
+                                                href="blogs?page=home">
+                                                Blogs
                                                 <svg
                                                     aria-hidden="true"
                                                     className="astro-yjy4zhro astro-c6vsoqas"

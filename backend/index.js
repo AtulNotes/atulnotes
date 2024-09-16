@@ -11,21 +11,21 @@ app.get('/', (req, res) => {
   res.send('AtulNotes API')
 })
 
-app.get('/slider', (req, res) => {
-  const filepath = `json/index.json`
+// Docs
+app.get('/docs/slider', (req, res) => {
+  const filepath = `json/docs.json`
   const fileContent = fs.readFileSync(filepath, "utf-8")
   res.send(fileContent)
 })
 
-app.get('/data/:lang/:page', async (req, res) => {
+app.get('/docs/:lang/:page', async (req, res) => {
   const page = req.params.page;
   const lang = req.params.lang;
   if (page != 'home') {
-    filepath = `data/${lang}/${page}.md`;
+    filepath = `docs/${lang}/${page}.md`;
   } else {
-    filepath = `data/${page}.md`;
+    filepath = `docs/${page}.md`;
   }
-  console.log(filepath);
   
   try {
     const fileContent = fs.readFileSync(filepath, "utf-8");
@@ -40,6 +40,38 @@ app.get('/data/:lang/:page', async (req, res) => {
     res.status(404).send(err);
   }
 });
+
+// Blogs 
+app.get('/blogs/slider', (req, res) => {
+  const filepath = `json/blogs.json`
+  const fileContent = fs.readFileSync(filepath, "utf-8")
+  res.send(fileContent)
+})
+
+app.get('/blogs/:lang/:page', async (req, res) => {
+  const page = req.params.page;
+  const lang = req.params.lang;
+  if (page != 'home') {
+    filepath = `blogs/${lang}/${page}.md`;
+  } else {
+    filepath = `blogs/${page}.md`;
+  }
+  
+  try {
+    const fileContent = fs.readFileSync(filepath, "utf-8");
+    const { content, data } = matter(fileContent)
+    res.send(
+      ({
+        data,
+        content
+      })
+    );
+  } catch (err) {
+    res.status(404).send(err);
+  }
+});
+
+
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)

@@ -13,7 +13,7 @@ export const Nav = () => {
             <div className="header sl-flex astro-kmkmnagf">
                 <div className="title-wrapper sl-flex astro-kmkmnagf">
                     <a href="/" className="site-title sl-flex astro-m46x6ez3">
-                        <span className="astro-m46x6ez3"> AtulNotes Docs </span>
+                        <span className="astro-m46x6ez3"><i className="fa-duotone fa-solid fa-code"></i> AtulNotes </span>
                     </a>
                 </div>
                 <div className="sl-flex astro-kmkmnagf">

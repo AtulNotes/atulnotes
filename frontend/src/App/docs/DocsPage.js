@@ -1,8 +1,8 @@
 import React from 'react'
-import Nav from '../comman/Nav'
+import Nav from '../../components/comman/Nav'
 import Docs from './Docs'
 
-const Main = ({ theme, onThemeChange }) => {
+const DocsPage = ({ theme, onThemeChange }) => {
     return (
         <>
             <Nav theme={theme} onThemeChange={onThemeChange} />
@@ -11,4 +11,4 @@ const Main = ({ theme, onThemeChange }) => {
     )
 }
 
-export default Main
+export default DocsPage

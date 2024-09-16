@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 const Slide = () => {
     const [data, setData] = useState({});
     const [pagePara, setPagePara] = useState('');
+    
 
     const fetchData = async () => {
         const search = window.location.search;
@@ -19,9 +20,9 @@ const Slide = () => {
         };
 
         try {
-            const response = await fetch(process.env.REACT_APP_BACKEND_URL+'/slider', options);
+            const response = await fetch(process.env.REACT_APP_BACKEND_URL+'/blogs/slider', options);
             const data = await response.json();
-            
+        
             setData(data);
         } catch (error) {
             console.error('Error:', error);
@@ -40,7 +41,7 @@ const Slide = () => {
                 <ul className="top-level astro-3ii7xxms">
                     <li className="astro-3ii7xxms">
                         <a
-                            href="/docs?page=home"
+                            href="/blogs?page=home"
                             aria-current={pagePara === 'home' ? 'page' : ''}
                             className="large astro-3ii7xxms">
                             <span className="astro-3ii7xxms">Home</span>
@@ -51,7 +52,7 @@ const Slide = () => {
                         data && data.length > 0 && data.map((item, index) => {
                             return (
                                 <li key={index} className="astro-3ii7xxms">
-                                    <details open className="astro-3ii7xxms">
+                                    <details className="astro-3ii7xxms">
                                         <summary className="astro-3ii7xxms">
                                             <div className="group-label astro-3ii7xxms">
                                                 <span className="large astro-3ii7xxms">{item.Title}</span>
@@ -75,7 +76,7 @@ const Slide = () => {
                                                     return (
                                                         <li key={index} className="astro-3ii7xxms">
                                                             <a
-                                                                href={`/docs?lang=${item.slug}&page=${slug.slug}`}
+                                                                href={`/blogs?lang=${item.slug}&page=${slug.slug}`}
                                                                 aria-current={pagePara === slug.slug ? 'page' : ''}
                                                                 className="astro-3ii7xxms">
                                                                 <span className="astro-3ii7xxms"

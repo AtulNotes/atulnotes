@@ -11,7 +11,7 @@ import remarkParse from 'remark-parse';
 import { unified } from 'unified';
 import { transformerCopyButton } from '@rehype-pretty/transformers'
 
-const Docs = () => {
+const Blogs = () => {
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
 
@@ -29,7 +29,7 @@ const Docs = () => {
         };
 
         try {
-            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/data/${lang}/${page}`, options);
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/blogs/${lang}/${page}`, options);
             const textData = await response.json();
             const { content, data } = textData;
 
@@ -56,6 +56,7 @@ const Docs = () => {
             setContent(htmlContent);
         } catch (error) {
             console.error('Error: Fetching data Failed');
+            window.location.href = "/";
         }
     };
 
@@ -115,4 +116,4 @@ const Docs = () => {
     );
 };
 
-export default Docs;
+export default Blogs;

@@ -14,6 +14,9 @@ const Aside = ({ htmlContent }) => {
         setHeadings(h2Data);
     }, [htmlContent]);
 
+
+    
+
     return (
         <aside className="right-sidebar-container astro-67yu43on">
             <div className="right-sidebar astro-67yu43on">

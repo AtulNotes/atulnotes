@@ -1,5 +1,5 @@
 import React from 'react'
-import Nav from '../comman/Nav'
+import Nav from '../../components/comman/Nav'
 import Hero from './Hero'
 
 const Home = () => {
