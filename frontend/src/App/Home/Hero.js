@@ -6,7 +6,7 @@ const Hero = () => {
             <div className="lg:sl-flex astro-67yu43on">
                 <div className="main-pane astro-67yu43on">
                     <main data-pagefind-body lang="en" dir="ltr" className="astro-bguv2lll">
-                        <div className="content-panel astro-7nkwcw3z">
+                        <div className="content-panel astro-7nkwcw3z max-width">
                             <div className="sl-container astro-7nkwcw3z">
                                 <div className="hero astro-jbfsktt5">
                                     <div className="sl-flex stack astro-jbfsktt5">

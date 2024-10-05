@@ -90,13 +90,13 @@ const Docs = () => {
                         <Aside htmlContent={content} />
                         <div className="main-pane astro-67yu43on">
                             <main data-pagefind-body lang="en" dir="ltr" className="astro-bguv2lll">
-                                <div className="content-panel astro-7nkwcw3z">
+                                <div className="content-panel astro-7nkwcw3z max-width">
                                     <div className="sl-container astro-7nkwcw3z">
                                         <h1 id="_top" className="astro-j6tvhyss">{title}</h1>
                                     </div>
                                 </div>
                                 <div>
-                                    <div className="content-panel astro-7nkwcw3z">
+                                    <div className="content-panel astro-7nkwcw3z max-width">
                                         <div className="sl-container astro-7nkwcw3z">
                                             <div className="sl-container astro-7nkwcw3z">
                                                 <div className="sl-markdown-content">

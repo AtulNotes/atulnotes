@@ -18,3 +18,9 @@
 .hero-section {
     padding-inline-start: 0 !important;
 }
+
+/*  */
+.max-width{
+    overflow: hidden;
+    max-width: 706px;
+}

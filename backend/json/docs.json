@@ -1,5 +1,33 @@
 [
     {
+        "Title": "CSS",
+        "slug": "css",
+        "slugs": [
+            {
+                "Title": "Good and Bad of CSS",
+                "slug": "good-and-bad-of-css"
+            }
+        ]
+    },
+    {
+        "Title": "JavaScript",
+        "slug": "javascript",
+        "slugs": [
+            {
+                "Title": "Good and Bad of JavaScript",
+                "slug": "good-and-bad-of-javascript"
+            },
+            {
+                "Title": "Css in JavaScript",
+                "slug": "css-in-javascript"
+            },
+            {
+                "Title": "React",
+                "slug": "react"
+            }
+        ]
+    },
+    {
         "Title": "Django",
         "slug": "django",
         "slugs": [
