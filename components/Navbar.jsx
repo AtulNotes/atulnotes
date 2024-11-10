@@ -4,7 +4,6 @@ import { toggletheme } from '@/store/slices/Theme';
 import { ActiveSearchFunc } from '@/func/navfunc';
 import { Search } from '@/utils/searchbox';
 import Link from 'next/link';
-import { useState, useEffect } from 'react'
 
 const Navbar = () => {
     const dispatch = useDispatch();

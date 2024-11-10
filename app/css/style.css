@@ -6,6 +6,10 @@
     cursor: pointer;
 }
 
+.ml-3 {
+    margin-left: 3rem;
+}
+
 /* Navbar */
 .search_close_icon {
     cursor: pointer;

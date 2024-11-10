@@ -14,7 +14,7 @@ export const Search = () => {
             >
                 <div className="dialog-frame sl-flex astro-v37mnknz">
                     <i className="search_close_icon fa-solid fa-xmark-large"></i>
-                    <Image onClick={() => DeactiveSearchFunc()} className="cursor-pointer" src="svgs/cross.svg"  width="15" height="15" alt="cross"/>
+                    <Image onClick={() => DeactiveSearchFunc()} className="cursor-pointer" src="/svgs/cross.svg"  width="15" height="15" alt="cross"/>
 
                     <div className="search-container astro-v37mnknz">
                         <div id="starlight__search" className="astro-v37mnknz">
