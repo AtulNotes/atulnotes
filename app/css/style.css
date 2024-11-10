@@ -1,0 +1,32 @@
+.d-none {
+    display: none;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+/* Navbar */
+.search_close_icon {
+    cursor: pointer;
+}
+
+/* copy Button */
+.rehype-pretty-copy{
+    background-color: transparent;
+    border: none;
+}
+
+
+
+/* hero-section */
+
+.hero-section {
+    padding-inline-start: 0 !important;
+}
+
+/*  */
+.max-width{
+    overflow: hidden;
+    max-width: 706px;
+}
