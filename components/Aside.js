@@ -15,7 +15,6 @@ const Aside = ({ data }) => {
         setHeadings(h2Data);
     }, [data]);
 
-
     
 
     return (
@@ -35,7 +34,7 @@ const Aside = ({ data }) => {
                                         <span className="astro-g2bywc46">Overview</span>
                                     </a>
                                 </li>
-                                {/* {
+                                {
                                     headings && headings.length > 0 && headings.map((item, index) => {
                                         return (
                                             <li className="astro-g2bywc46" key={index}>
@@ -48,7 +47,7 @@ const Aside = ({ data }) => {
                                             </li>
                                         )
                                     })
-                                } */}
+                                }
                             </ul>
                         </nav>
                     </div>

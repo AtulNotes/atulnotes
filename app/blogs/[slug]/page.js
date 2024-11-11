@@ -9,16 +9,16 @@ export default async function Page({ params }) {
     const slug = (await params).slug
 
     // Data Fetching
-    const response = await fetch(`${process.env.API_URL}/json/docs.json`);
+    const response = await fetch(`${process.env.API_URL}/json/blogs.json`);
     const slideData = await response.json();
     
     // Slug Fetching
     let page = slug.split('%40')[0];
     let lang = slug.split('%40')[1];
     if (page === 'home') {
-        var slugsResponse = await fetch(`https://atul22g-notesapi.pages.dev/docs/home.md`);
+        var slugsResponse = await fetch(`https://atul22g-notesapi.pages.dev/blogs/home.md`);
     } else {
-        var slugsResponse = await fetch(`https://atul22g-notesapi.pages.dev/docs/${lang}/${page}.md`);
+        var slugsResponse = await fetch(`https://atul22g-notesapi.pages.dev/blogs/${lang}/${page}.md`);
         
     }
     let slugsText = await slugsResponse.text();
@@ -74,7 +74,7 @@ export default async function Page({ params }) {
                     </div>
                 </div>
             </div>
-            <Slide slugP={page} page="docs" data={slideData}/>
+            <Slide slugP={page} page="blogs" data={slideData}/>
         </nav>
     </>
     )

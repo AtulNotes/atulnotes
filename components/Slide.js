@@ -2,7 +2,8 @@
 import Link from 'next/link';
 import React from 'react';
 
-const Slide = ({data}) => {
+const Slide = ({ data, slugP, page }) => {
+    console.log(slugP);
 
     return (
         <div id="starlight__sidebar" className="sidebar-pane astro-vrdttmbt">
@@ -12,7 +13,8 @@ const Slide = ({data}) => {
                 <ul className="top-level astro-3ii7xxms">
                     <li className="astro-3ii7xxms">
                         <Link
-                            href="/docs/home"
+                            href={`/${page}/home`}
+                            aria-current={slugP === 'home' ? 'page' : 'ass'}
                             className="large astro-3ii7xxms">
                             <span className="astro-3ii7xxms">Home</span>
                         </Link>
@@ -22,7 +24,7 @@ const Slide = ({data}) => {
                         Array.isArray(data) && data.map((item, index) => {
                             return (
                                 <li key={index} className="astro-3ii7xxms">
-                                    
+
                                     <details className="astro-3ii7xxms">
                                         <summary className="astro-3ii7xxms">
                                             <div className="group-label astro-3ii7xxms">
@@ -47,7 +49,8 @@ const Slide = ({data}) => {
                                                     return (
                                                         <li key={index} className="astro-3ii7xxms">
                                                             <a
-                                                                href={`/docs/${item.slug}@${slug.slug}`}
+                                                                href={`/${page}/${slug.slug}@${item.slug}`}
+                                                                aria-current={slugP === slug.slug ? 'page' : ''}
                                                                 className="astro-3ii7xxms">
                                                                 <span className="astro-3ii7xxms"
                                                                 >{slug.Title}</span>
