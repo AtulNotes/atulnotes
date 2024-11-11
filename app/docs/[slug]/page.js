@@ -2,17 +2,32 @@
 import Aside from "@/components/Aside";
 import Navbar from "@/components/Navbar";
 import Slide from "@/components/Slide";
+import htmltoContent from "@/utils/htmltoContent";
+const matter = require('gray-matter');
 
 export default async function Page({ params }) {
     const slug = (await params).slug
-    let URL = process.env.URL;
 
+    // Data Fetching
     const response = await fetch(`${process.env.API_URL}/json/docs.json`);
-    const data = await response.json();
+    const slideData = await response.json();
     
-    let slugs =  await fetch(`${URL}/apis/docs?slug=${slug}`);
+    // Slug Fetching
+    let lang = slug.split('%40')[0];
+    let page = slug.split('%40')[1];
+    if (lang === 'home') {
+        var slugsResponse = await fetch(`https://atul22g-notesapi.pages.dev/docs/home.md`);
+    } else {
+        var slugsResponse = await fetch(`https://atul22g-notesapi.pages.dev/docs/${lang}/${page}.md`);
+        
+    }
+    let slugsText = await slugsResponse.text();
+    const { content, data } = matter(slugsText)
+
+    // content to html
+    let htmlContent = await htmltoContent(content);
+    console.log(htmlContent);
     
-    console.log(slugs);
     
     return (
         <>
@@ -42,7 +57,7 @@ export default async function Page({ params }) {
                         <main data-pagefind-body lang="en" dir="ltr" className="astro-bguv2lll">
                             <div className="content-panel astro-7nkwcw3z max-width">
                                 <div className="sl-container astro-7nkwcw3z">
-                                    {/* <h1 id="_top" className="astro-j6tvhyss">{title}</h1> */}
+                                    <h1 id="_top" className="astro-j6tvhyss">{data.title}</h1>
                                 </div>
                             </div>
                             <div>
@@ -50,7 +65,7 @@ export default async function Page({ params }) {
                                     <div className="sl-container astro-7nkwcw3z">
                                         <div className="sl-container astro-7nkwcw3z">
                                             <div className="sl-markdown-content">
-                                                {/* <div dangerouslySetInnerHTML={{ __html: content }}></div> */}
+                                                <div dangerouslySetInnerHTML={{ __html: htmlContent }}></div>
                                             </div>
                                         </div>
                                     </div>
@@ -60,7 +75,7 @@ export default async function Page({ params }) {
                     </div>
                 </div>
             </div>
-            <Slide data={data}/>
+            <Slide data={slideData}/>
         </nav>
     </>
     )
