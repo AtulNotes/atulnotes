@@ -13,9 +13,9 @@ export const Search = () => {
                 className="astro-v37mnknz"
             >
                 <div className="dialog-frame sl-flex astro-v37mnknz">
-                    <i className="search_close_icon fa-solid fa-xmark-large"></i>
-                    <Image onClick={() => DeactiveSearchFunc()} className="cursor-pointer" src="/svgs/cross.svg"  width="15" height="15" alt="cross"/>
-
+                    <span className="cursor-pointer">
+                        <Image onClick={() => DeactiveSearchFunc()} src="/svgs/cross.svg" width="15" height="15" alt="cross" />
+                    </span>
                     <div className="search-container astro-v37mnknz">
                         <div id="starlight__search" className="astro-v37mnknz">
                             <div className="pagefind-ui svelte-e9gkc3 pagefind-ui--reset">
@@ -23,7 +23,7 @@ export const Search = () => {
                                     <input className="pagefind-ui__search-input svelte-e9gkc3" type="text" placeholder="Search" value={search}
                                         onChange={e => setSearch(e.target.value)} />
                                 </form>
-                                <div className={search ?  'pagefind-ui__results-area svelte-e9gkc3' :'pagefind-ui__results-area svelte-e9gkc3 d-none'}>
+                                <div className={search ? 'pagefind-ui__results-area svelte-e9gkc3' : 'pagefind-ui__results-area svelte-e9gkc3 d-none'}>
                                     <p className="pagefind-ui__message svelte-e9gkc3">Searching for {search}</p>
                                 </div>
                             </div>

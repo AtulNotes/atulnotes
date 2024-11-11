@@ -1,13 +1,5 @@
-.d-none {
-    display: none;
-}
-
 .cursor-pointer {
     cursor: pointer;
-}
-
-.ml-3 {
-    margin-left: 3rem;
 }
 
 /* Navbar */
@@ -16,7 +8,7 @@
 }
 
 /* copy Button */
-.rehype-pretty-copy{
+.rehype-pretty-copy {
     background-color: transparent;
     border: none;
 }
@@ -30,7 +22,7 @@
 }
 
 /*  */
-.max-width{
+.max-width {
     overflow: hidden;
     max-width: 706px;
 }

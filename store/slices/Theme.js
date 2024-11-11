@@ -5,7 +5,7 @@ const themeSlice = createSlice({
     initialState: {
         currentTheme: typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme')
             ? localStorage.getItem('starlight-theme')
-            : window.matchMedia('(prefers-color-scheme: light)').matches
+            : typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: light)').matches
                 ? 'light'
                 : 'dark',
     },

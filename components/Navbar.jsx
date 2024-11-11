@@ -50,7 +50,7 @@ const Navbar = () => {
                 <div className="sl-hidden md:sl-flex right-group astro-kmkmnagf">
                     <div className="sl-flex social-icons astro-kmkmnagf">
                         <a
-                            href="https://github.com/Atugatran"
+                            href="https://github.com/AtulNotes/atulnotes"
                             rel="me"
                             className="sl-flex astro-wy4te6ga">
                             <span className="sr-only astro-wy4te6ga">GitHub</span>
@@ -71,9 +71,10 @@ const Navbar = () => {
                         <span className="sr-only astro-4yphtoen">Select theme</span>
                         <svg
                             aria-hidden="true"
+                            style={{ left: '-10px' }}
                             className="icon label-icon astro-4yphtoen astro-c6vsoqas pl-2"
-                            width="16"
-                            height="16"
+                            width="25"
+                            height="25"
                             viewBox="0 0 24 24"
                             fill="currentColor">
                             <path

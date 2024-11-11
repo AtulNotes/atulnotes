@@ -1,4 +1,5 @@
 import localFont from "next/font/local";
+import "./globals.css"
 import "./css/index.css";
 import "./css/style.css";
 import StoreProvider from "./StoreProvider";
